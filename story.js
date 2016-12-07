@@ -6,3 +6,5 @@ var StorySchema = new Schema({
     titu: String,
     adre: String
 });
+
+module.exports = mongoose.model('Story', StorySchema);
