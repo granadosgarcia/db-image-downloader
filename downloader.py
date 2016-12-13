@@ -8,7 +8,7 @@ def downloadFile(url, file_name):
         response = get(url)
         file.write(response.content)
 
-with open('images2.json') as data_file:
+with open('audios.json') as data_file:
     data = json.load(data_file)
 
 for image in data:

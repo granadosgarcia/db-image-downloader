@@ -23,16 +23,74 @@ app.get('/', function(req, res){
             async.forEach(story.memories, function(memory){
 
 //                console.log(memory);
+                //
+                // if (memory.ext === "jpg"){
+                //     size = "m";
+                //
+                //     if(memory.redeems.indexOf("l") > -1){
+                //         size = "l";
+                //     }
+                //
+                //     imageURL = "http://www.centroculturadigital.mx/media/"+ memory.name + "-" + size + "." + memory.ext;
+                //     imageName = memory.name + "-" + size + "." + memory.ext;
+                //
+                //     var obj = {};
+                //
+                //     obj.name = imageName;
+                //     obj.imgURL = imageURL;
+                //
+                //
+                //     allImages.push(obj);
+                // } else
 
-                if (memory.ext === "jpg"){
-                    size = "m";
+//                 console.log(memory);
+//
+//                 if (memory.ext === "png"){
+//                    size = "m";
+//
+//                    if (memory.reedems){
+//                      if(memory.redeems.indexOf('l') > -1){
+//                          size = "l";
+//                      }
+//                    }
+//
+//                    imageURL = "http://www.centroculturadigital.mx/media/"+ memory.name + "-" + size + "." + memory.ext;
+//                    imageName = memory.name + "-" + size + "." + memory.ext;
+//
+//                    var obj = {};
+//
+//                    obj.name = imageName;
+//                    obj.imgURL = imageURL;
+//
+//
+//                    allImages.push(obj);
+//                }
+//
+//                else if (memory.ext === "gif"){
+//                   size = "m";
+//
+//                   if (memory.reedems){
+//                     if(memory.redeems.indexOf('l') > -1){
+//                         size = "l";
+//                     }
+//                   }
+//
+//
+//                   imageURL = "http://www.centroculturadigital.mx/media/"+ memory.name + "-" + size + "." + memory.ext;
+//                   imageName = memory.name + "-" + size + "." + memory.ext;
+//
+//                   var obj = {};
+//
+//                   obj.name = imageName;
+//                   obj.imgURL = imageURL;
+//
+//
+//                   allImages.push(obj);
+                if (memory.ext === "wav"|| memory.ext === "mp3"){
 
-                    if(memory.redeems.indexOf("l") > -1){
-                        size = "l";
-                    }
 
-                    imageURL = "http://www.centroculturadigital.mx/media/"+ memory.name + "-" + size + "." + memory.ext;
-                    imageName = memory.name + "-" + size + "." + memory.ext;
+                    imageURL = "http://www.centroculturadigital.mx/media/"+ memory.name + "." + memory.ext;
+                    imageName = memory.name +"."+ memory.ext;
 
                     var obj = {};
 
@@ -43,9 +101,10 @@ app.get('/', function(req, res){
                     allImages.push(obj);
                 }
 
+
             });
 
-            
+
         });
 
         res.json(allImages);
